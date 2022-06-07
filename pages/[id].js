@@ -30,7 +30,7 @@ const Index = () => {
         <meta description="Caesar Cipher Web App" />
         <meta property="og:title" content="Caesar Cipher" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://caesar-cipher.netlify.app" />
+        <meta property="og:url" content="https://shift-encrypt.netlify.app" />
         <meta
           property="og:image"
           content="https://cdn.discordapp.com/attachments/846323946144137216/983766375111753728/aa.png"
