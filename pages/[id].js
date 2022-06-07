@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 const Index = () => {
   const [value, setValue] = useState('');
   const ref = useRef(null);
+  const router = useRouter();
+  const { id } = router.query;
 
   useEffect(() => ref?.current?.focus(), []);
 
@@ -36,15 +39,14 @@ const Index = () => {
         <meta property="og:site_name" content="Caesar Cipher" />
         <meta name="theme-color" content="#ff006a" />
       </Head>
-
       <div
         ref={ref}
         style={styles}
+        spellCheck={false}
         onInput={e => setValue(e.target.innerText)}
         contentEditable
-        spellCheck={false}
       />
-      <div style={styles}>{shiftRight(value, 1)}</div>
+      <div style={styles}>{shiftRight(value, parseInt(id) || 1)}</div>
     </>
   );
 };
